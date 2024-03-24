@@ -1,0 +1,81 @@
+.rasa {
+         font-family: "Rasa", serif;
+         font-optical-sizing: auto;
+         font-weight: 400;
+         font-style: normal;
+       }
+
+.tilt-prism {
+               font-family: "Tilt Prism", sans-serif;
+               font-optical-sizing: auto;
+               font-weight: 400;
+               font-style: normal;
+               font-variation-settings:
+                 "XROT" 0,
+                 "YROT" 0;
+             }
+html {
+  color: #41280f;
+  font-size: 1.4em;
+  line-height: 1.4;
+}
+
+body {
+  background: url("../cloudForProject.png") 180% -250% no-repeat,
+              url("../cloudForProject.png") -100% -200% no-repeat,
+              url("../cloudForProject.png")  240% -50% no-repeat,
+              url("../cloudForProject.png")  -100%  150% no-repeat,
+              linear-gradient(to right, rgb(224, 210, 201), rgb(255, 255, 255), rgb(224, 210, 201));
+  text-align: center;
+  font-family: Rasa;
+  /*background-position: center;*/
+  /*background-size: cover;*/
+}
+
+.header {
+  font-size: 30px;
+  margin-bottom: 70px;
+}
+
+.block {
+  width: 1000px;
+  margin: auto;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+h1, h2 {
+  font-family: "Tilt prism";
+  color: #0f1717;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 25px;
+}
+
+button {
+  font-family: "Rasa";
+  font-size: 20px;
+  background-color: #eee2d7;
+  border: 2px solid;
+  border-color: #41280f;
+  border-radius: 14px;
+  padding: 15px 32px;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #41280f;
+  color: #eee2d7;
+  transition: all 0.3s ease;
+}
