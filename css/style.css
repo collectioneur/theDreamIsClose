@@ -30,7 +30,7 @@ body {
 main {
   background: url("../cloudForProject.png") no-repeat,
   url("../cloudForProject.png") no-repeat;
-  animation: move-background-middle 10s linear infinite;
+  animation: move-background-middle 50s linear infinite;
 }
 .header {
   font-size: 30px;
