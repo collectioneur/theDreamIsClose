@@ -5,15 +5,12 @@
          font-style: normal;
        }
 
-.tilt-prism {
-               font-family: "Tilt Prism", sans-serif;
-               font-optical-sizing: auto;
-               font-weight: 400;
-               font-style: normal;
-               font-variation-settings:
-                 "XROT" 0,
-                 "YROT" 0;
-             }
+.playfair-display {
+                     font-family: "Playfair Display", serif;
+                     font-optical-sizing: auto;
+                     font-weight: 400;
+                     font-style: normal;
+                   }
 html {
   color: #41280f;
   font-size: 1.4em;
@@ -23,15 +20,18 @@ html {
 body {
   background: url("../cloudForProject.png") 180% -250% no-repeat,
               url("../cloudForProject.png") -100% -200% no-repeat,
-              url("../cloudForProject.png")  240% -50% no-repeat,
-              url("../cloudForProject.png")  -100%  150% no-repeat,
               linear-gradient(to right, rgb(224, 210, 201), rgb(255, 255, 255), rgb(224, 210, 201));
   text-align: center;
   font-family: Rasa;
-  /*background-position: center;*/
-  /*background-size: cover;*/
+  animation: move-background-top 2s ease-out;
+
 }
 
+main {
+  background: url("../cloudForProject.png") no-repeat,
+  url("../cloudForProject.png") no-repeat;
+  animation: move-background-middle 10s linear infinite;
+}
 .header {
   font-size: 30px;
   margin-bottom: 70px;
@@ -45,8 +45,8 @@ body {
 }
 
 h1, h2 {
-  font-family: "Tilt prism";
-  color: #0f1717;
+  font-family: "Playfair Display";
+  color: #41280f;
   margin: 0px;
 }
 
@@ -56,6 +56,7 @@ h1 {
 
 h2 {
   font-size: 50px;
+  color: #211505;
 }
 
 p {
@@ -63,7 +64,7 @@ p {
 }
 
 button {
-  font-family: "Rasa";
+  font-family: "Playfair Display";
   font-size: 20px;
   background-color: #eee2d7;
   border: 2px solid;
@@ -78,4 +79,54 @@ button:hover {
   background-color: #41280f;
   color: #eee2d7;
   transition: all 0.3s ease;
+}
+.not-animated {
+  opacity: 0;
+}
+.element-to-animate {
+  animation-name: fade-out;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.animated {
+  animation-name: fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes move-background-top {
+  0% {
+    background-position: 200% -350%, -200% -350%;
+  }
+  100% {
+    background-position: 180% -250%, -100% -200%, 350% -50%;
+  }
+}
+@keyframes move-background-middle {
+  from {
+    background-position: 400% -200%, -300%  0%;
+  }
+  to {
+    background-position: -300% -200%, 400% 0%;
+  }
 }
