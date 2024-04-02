@@ -18,18 +18,34 @@ html {
 }
 
 body {
-  background: url("../cloudForProject.png") 180% -250% no-repeat,
-              url("../cloudForProject.png") -100% -200% no-repeat,
+  background: url("../img/cloudForProject.png") 180% -150% no-repeat,
+              url("../img/cloudForProject.png") -100% -150% no-repeat,
               linear-gradient(to right, rgb(224, 210, 201), rgb(255, 255, 255), rgb(224, 210, 201));
   text-align: center;
   font-family: Rasa;
   animation: move-background-top 2s ease-out;
-
+  margin: 0px;
+  margin-bottom: 50px;
 }
 
+.hamburger-button {
+  border: none;
+  border-radius: 15px;
+  background-color: unset;
+}
+.hamburger-button:hover {
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.hamburger {
+  width: 50px;
+}
+.bar-button {
+  margin-left: 10px;
+}
 main {
-  background: url("../cloudForProject.png") no-repeat,
-  url("../cloudForProject.png") no-repeat;
+  background: url("../img/cloudForProject.png") no-repeat,
+  url("../img/cloudForProject.png") no-repeat;
   animation: move-background-middle 50s linear infinite;
 }
 .header {
@@ -44,10 +60,20 @@ main {
   margin-bottom: 75px;
 }
 
+.hor-bar {
+  display: flex;
+  margin-bottom: 40px;
+  flex-direction: row;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
 h1, h2 {
   font-family: "Playfair Display";
   color: #41280f;
-  margin: 0px;
+  /*margin: 0px;*/
 }
 
 h1 {
@@ -63,7 +89,7 @@ p {
   font-size: 25px;
 }
 
-button {
+.button {
   font-family: "Playfair Display";
   font-size: 20px;
   background-color: #eee2d7;
@@ -75,15 +101,17 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover {
   background-color: #41280f;
   color: #eee2d7;
   transition: all 0.3s ease;
 }
+
 .not-animated {
   opacity: 0;
 }
 .element-to-animate {
+  height: fit-content;
   animation-name: fade-out;
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -97,11 +125,9 @@ button:hover {
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateX(0px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0px);
   }
 }
 
@@ -119,14 +145,18 @@ button:hover {
     background-position: 200% -350%, -200% -350%;
   }
   100% {
-    background-position: 180% -250%, -100% -200%, 350% -50%;
+    background-position: 180% -150%, -100% -150%;
   }
 }
 @keyframes move-background-middle {
   from {
-    background-position: 400% -200%, -300%  0%;
+    background-position: 300% -200px, -300%  200px;
   }
   to {
-    background-position: -300% -200%, 400% 0%;
+    background-position: -300% -200px, 300% 200px;
   }
+}
+
+.expand {
+  opacity: 0;
 }

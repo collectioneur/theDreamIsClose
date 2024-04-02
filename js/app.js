@@ -9,12 +9,13 @@ function isElementInViewport(el) {
 }
 
 function animateScrollingElements() {
-  visibleElements = document.querySelectorAll('.element-to-animate');
-  visibleElements = document.querySelectorAll('.not-animated');
-  const unvisibleElements = document.querySelectorAll('.animated');
+  visibleElements = document.querySelectorAll('.element-to-animate, .not-animated');
+  // visibleElements = document.querySelectorAll('.not-animated');
+  unvisibleElements = document.querySelectorAll('.animated');
   visibleElements.forEach((element) => {
     if (isElementInViewport(element)) {
       element.classList.remove('element-to-animate');
+      element.classList.remove('not-animated');
       element.classList.add('animated');
   }
 });
@@ -27,3 +28,11 @@ function animateScrollingElements() {
 }
 document.addEventListener('DOMContentLoaded', animateScrollingElements);
 window.addEventListener('scroll', animateScrollingElements);
+function toggleFlexExpand() {
+  var container = document.querySelectorAll('.bar-button');
+  container.forEach((element) => {
+    if(!element.classList.contains('hamburger-button')) {
+      element.classList.toggle('expand');
+    }
+  })
+}
