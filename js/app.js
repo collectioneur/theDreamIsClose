@@ -28,11 +28,35 @@ function animateScrollingElements() {
 }
 document.addEventListener('DOMContentLoaded', animateScrollingElements);
 window.addEventListener('scroll', animateScrollingElements);
+
 function toggleFlexExpand() {
-  var container = document.querySelectorAll('.bar-button');
+  var container = document.querySelectorAll('.hor-bar-elements');
   container.forEach((element) => {
     if(!element.classList.contains('hamburger-button')) {
       element.classList.toggle('expand');
     }
   })
+}
+
+function openLogin() {
+  let container = document.querySelector('.wrapper');
+  let register= document.querySelector('.register');
+  let login = document.querySelector('.login');
+  register.classList.add('expand');
+  login.classList.remove('expand');
+  container.classList.remove('expand');
+}
+
+function openRegister() {
+  let container = document.querySelector('.wrapper');
+  let register= document.querySelector('.register');
+  let login = document.querySelector('.login');
+  register.classList.remove('expand');
+  login.classList.add('expand');
+  container.classList.remove('expand');
+}
+
+function end() {
+  let container = document.querySelector('.wrapper');
+  container.classList.add('expand');
 }
